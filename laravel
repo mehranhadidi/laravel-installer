@@ -1,0 +1,15 @@
+#! /usr/bin/env php
+
+<?php
+
+use App\Command\NewCommand;
+use GuzzleHttp\Client;
+use Symfony\Component\Console\Application;
+
+require 'vendor/autoload.php';
+
+$app = new Application('Laravel Installer', '1.0');
+
+$app->add(new NewCommand(new Client));
+
+$app->run();
